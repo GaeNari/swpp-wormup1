@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'login#index'
-  post 'login' => 'login#in'
-  delete 'logout' => 'login#out'
+  post 'login' => 'login#login'
+  post 'signup' => 'login#up'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
