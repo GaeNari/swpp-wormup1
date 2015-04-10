@@ -14,6 +14,10 @@ $(document).ready(function(){
 	{
 	  $('#messagebox').html('Invalid username and password combination. Please try again.');
 	}
+	else
+	{
+	  welcome(response.user_name, response.login_count);
+	}
       }
     })
   })
@@ -40,7 +44,15 @@ $(document).ready(function(){
 	{
 	  $('#messagebox').html('This user name already exists. Please try again.');
 	}
+	else
+	{
+	  welcome(response.user_name, response.login_count);
+	}
       }
     })
   })
 });
+
+function welcome(name, count){
+   document.write('Welcome ' + name + '<br>You have logged in ' + count + 'times.<br> <button type="button" onclick="location.reload()">Logout</button>');
+}
