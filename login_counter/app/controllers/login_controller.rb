@@ -35,4 +35,11 @@ class LoginController < ApplicationController
       render json: { user_name: @user.username, login_count: @user.count }
     end
   end
+
+  def clear
+    Session.all.each do |s|
+      s.destroy
+    end
+    render :index
+  end
 end
